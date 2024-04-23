@@ -1,6 +1,6 @@
-package guru.springframework.norris.chuck.controller;
+package guru.springframework.spring5webappcnjokes.controller;
 
-import guru.springframework.norris.chuck.service.ChuckNorrisJokeService;
+import guru.springframework.spring5webappcnjokes.service.ChuckNorrisJokeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +13,7 @@ public class ChuckNorrisController {
         this.chuckNorrisJokeService = chuckNorrisJokeService;
     }
 
-    @RequestMapping(path = "/")
+    @RequestMapping({"/", ""})
     public String getChuckNorrisJoke(Model model) {
         model.addAttribute("joke", chuckNorrisJokeService.getJoke());
 
